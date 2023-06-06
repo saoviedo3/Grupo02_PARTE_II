@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------------- 
+ * Amination
+ * ------------------------------------------------------------------- */
+
+#containeranima {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  background: pink;
+}
+#animateanima {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+
+.animate {
+  animation: rotateAndColorChange 5s forwards;
+}
+
+@keyframes rotateAndColorChange {
+  0% {
+      transform: rotate(0);
+      background-color: blue;
+  }
+
+  50% {
+      transform: rotate(180deg);
+      background-color: green;
+  }
+
+  100% {
+      transform: rotate(360deg);
+      background-color: blue;
+  }
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  background-color: blue;
+}

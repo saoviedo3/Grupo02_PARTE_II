@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JS HTML DOM - Avanzado</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <title>Grupo Nro. 2</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap 4 Template For Software Startups">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome JS-->
+    <script defer src="../assets/fontawesome/js/all.min.js"></script>
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dark.min.css">
+    <link rel="stylesheet" href="../assets/plugins/simplelightbox/simple-lightbox.min.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/mainavanzado.css">
+</head>
+
+<body class="docs-page">
+    <header class="header fixed-top">
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+                    <button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none"
+                        type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="site-logo"><a class="navbar-brand" href="../index.html"><img class="logo-icon me-2"
+                                src="../assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Grupo <span
+                                    class="text-alt">Nro. 2 </span></span></a></div>
+                </div>
+                <!--//docs-logo-wrapper-->
+                <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+
+
+                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+                        <li class="list-inline-item"><a href="../videos/DomAvanzado.mp4" target="_blank"><i
+                                    class="fab fa-youtube fa-fw"></i></a></li>
+                    </ul>
+                    <!--//social-list-->
+
+                </div>
+                <!--//docs-top-utilities-->
+            </div>
+            <!--//container-->
+        </div>
+        <!--//branding-->
+    </header>
+    <!--//header-->
+
+
+    <div class="docs-wrapper">
+        <div id="docs-sidebar" class="docs-sidebar">
+            <div class="top-search-box d-lg-none p-3">
+                <form class="search-form">
+                    <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                    <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav id="docs-nav" class="docs-nav navbar">
+                <ul class="section-items list-unstyled nav flex-column pb-3">
+                    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span
+                                class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>DOM - Avanzado</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">DOM Animaciones</a></li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">DOM Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">DOM Oyente de Eventos</a></li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-4">DOM Navegacion</a></li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-5">DOM Nodos</a></li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-6">DOM Colecciones</a></li>
+                    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-7">DOM Lista de Nodos</a></li>
+
+
+
+                </ul>
+
+            </nav>
+            <!--//docs-nav-->
+        </div>
+        <!--//docs-sidebar-->
+        <div class="docs-content">
+            <div class="container">
+                <article class="docs-article" id="section-1">
+                    <header class="docs-header">
+                        <h1 class="docs-heading">JS HTML DOM - Avanzado <span class="docs-time">Última Actualización
+                                Fecha: 06/06/2023 </span></h1>
+                        <section class="docs-intro" id="item-1-0">
+                            <p>Realizar un Portal Web (utilizando BootStrap) con el tema JS HTML DOM AVANZADO
+                                (ANIMACIONES DOM, EVENTOS DOM, EVENTLISTENER DOM, NODE DOM, COLECCIONES DOM, LISTA DE
+                                NODOS DOM, NAVEGACION DOM)
+                                incluir ejemplos con sus respectivos resultados. </p>
+                        </section>
+
+
+                        <section class="docs-intro" id="item-1-1">
+                            <h2 class="section-heading">DOM Animación</h2>
+                            <p>Todas las animaciones deben ser relativas a un elemento contenedor.
+                                El elemento contenedor debe crearse con estilo = " position: relative".
+
+                                El elemento de animación debe crearse con estilo = " position: absolute".
+                                Las animaciones de JavaScript se realizan mediante la programación de cambios graduales
+                                en el estilo de un elemento.
+                                Los cambios son llamados por un temporizador. Cuando el intervalo del temporizador es
+                                pequeño, la animación parece continua.
+
+                                El código básico es:</p>
+
+
+                            <!--//docs-intro-->
+
+                            <div class="docs-code-block">
+                                <pre class="shadow-lg rounded"><code class="javascript hljs">function myMove() {
+    let id = null;
+    const elem = document.getElementById("animateanima");
+    let pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 200) {
+          clearInterval(id);
+          elem.style.transform = "rotate(0deg)";
+          elem.style.backgroundColor = "red";
+        } else {
+          pos++;
+          elem.style.top = pos + "px";
+          elem.style.left = pos + "px";
+          elem.style.transform = "rotate(" + pos + "deg)";
+          elem.style.backgroundColor = "blue";
+        }
+    }
+}
+</code></pre>
+
+                            </div>
+
+                            <div class="card mt-3 mb-3">
+                                <div class="card-body">
+                                    <button class="btn btn-success mb-3" type="button" onclick="myMove()">Mostrar
+                                        Animacion</button>
+                                    <div id="containeranima">
+                                        <div id="animateanima"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <p>Animacion de rotacion de un cuadrado y cambio de color</p>
+                            <!--//docs-code-block-->
+                            <div class="docs-code-block">
+                                <pre class="shadow-lg rounded"><code class="javascript hljs">function startAnimation() {
+var square = document.querySelector('.square');
+square.classList.add('animate');
+setTimeout(function () {
+square.classList.remove('animate');
+}, 5000);
+}
+</code></pre>
+
+                                <div class="card mt-3 mb-3">
+                                    <div class="card-body">
+                                        <button class="btn btn-sm btn-success " onclick="startAnimation()">Rotar
+                                            Cuadrado</button>
+                                        <div class="square m-4"></div>
+                                    </div>
+
+                                </div>
+                        </section>
+
+                        <section class="docs-section" id="item-1-2">
+                            <h2 class="section-heading">Eventos DOM</h2>
+                            <p>Un JavaScript se puede ejecutar cuando ocurre un evento, como cuando un usuario hace clic
+                                en
+                                un elemento HTML. </p>
+
+                            <p>Para ejecutar código cuando un usuario hace clic en un elemento, agregue código
+                                JavaScript a
+                                un atributo de evento HTML:
+                            </p>
+                            <p>onclick=JavaScript</p>
+                            <p>Ejemplos de eventos HTML:</p>
+                            <ul>
+                                <li>Cuando un usuario hace clic con el mouse</li>
+                                <li>Cuando una página web ha cargado</li>
+                                <li>Cuando se ha cargado una imagen</li>
+                                <li>Cuando el mouse se mueve sobre un elemento</li>
+                                <li>Cuando se cambia un campo de entrada</li>
+                                <li>Cuando se envía un formulario HTML</li>
+                                <li>Cuando un usuario pulsa una tecla</li>
+                            </ul>
+                            <p>En este ejemplo, el contenido del boton cambia cuando un usuario hace clic en él:</p>
+
+                            <div class="docs-code-block">
+                                <pre class="shadow-lg rounded"><code class="javascript hljs">function changeText(id) {
+  id.innerHTML = "El texto ha cambiado";
+}
+</code></pre>
+
+                            </div>
+                            <!--//docs-code-block-->
+                            <div id="cont2"></div>
+                            <button class="btn btn-success" type="button" onclick="changeText(this)">Cliquea a ver qué
+                                pasa
+                            </button>
+                            <br>
+                            <br>
+                            <h4 class="heading" style="padding-top:1%">Asignar eventos utilizando el HTML DOM</h4>
+
+                            <p>El HTML DOM le permite asignar eventos a elementos HTML usando JavaScript, asigne un
+                                evento
+                                onclick a un elemento de botón:</p>
+
+                            <div class="docs-code-block">
+                                <pre class="shadow-lg rounded"><code class="javascript hljs">document.getElementById("myBtn").onclick = displayDate;
+</code></pre>
+
+                            </div>
+                            <!--//docs-code-block-->
+                            <div class="card text-center mt-4 mb-4 p-3">
+                                <p id="agregarfecha"></p>
+                            </div>
+                            <input class="btn btn-success" type="button" id="myBtn1" value="Click aquí" />
+                            <p> </p>
+
+
+                        </section>
+
+                        <section class="docs-section" id="item-1-3">
+                            <h2 class="section-heading">DOM Oyente de Eventos</h2>
+                            <p>UEl addEventListener()método adjunta un controlador de eventos al elemento especificado y
+                                a
+                                un elemento sin sobrescribir los controladores de eventos existentes.</p>
+
+                            <p>Para ejecutar código cuando un usuario hace clic en un elemento, agregue código
+                                JavaScript a
+                                un atributo de evento HTML:
+                            </p>
+                            <ul>
+                                <li>Puede agregar muchos controladores de eventos a un elemento.</li>
+                                <li>Puede agregar muchos controladores de eventos del mismo tipo a un elemento, es
+                                    decir,
+                                    dos eventos de "clic".</li>
+                                <li>Puede agregar detectores de eventos a cualquier objeto DOM, no solo elementos HTML.
+                                    es
+                                    decir, el objeto ventana.</li>
+                            </ul>
+                            <p>Al usar el addEventListener()método, el JavaScript se separa del marcado HTML, para una
+                                mejor
+                                legibilidad y le permite agregar detectores de eventos incluso cuando no controla el
+                                marcado
+                                HTML.</p>
+                            <p>Puede eliminar fácilmente un detector de eventos utilizando el
+                                removeEventListener()método.
+                            </p>
+                            <h3>Sintaxis</h3>
+
+                            <div class="docs-code-block">
+                                <pre
+                                    class="shadow-lg rounded"><code class="javascript hljs">element.addEventListener(event, function, useCapture);</code></pre>
+
+                                <ul>
+                                    <li>El primer parámetro es el tipo de evento (como " click" o " mousedown" o
+                                        cualquier
+                                        otro
+                                        evento HTML DOM ).</li>
+                                    <li>El segundo parámetro es la función que queremos llamar cuando ocurra el evento.
+                                    </li>
+                                    <li>El tercer parámetro es un valor booleano que especifica si se debe usar el
+                                        burbujeo
+                                        de
+                                        eventos o la captura de eventos. Este parámetro es opcional.</li>
+                                </ul>
+                                <div class="callout-block callout-block-info">
+
+                                    <div class="content">
+                                        <h4 class="callout-title">
+                                            <span class="callout-icon-holder me-1">
+                                                <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <!--//icon-holder-->
+                                            Nota
+                                        </h4>
+                                        <p>Tenga en cuenta que no utiliza el prefijo "on" para el evento; utilice "
+                                            click"
+                                            en
+                                            lugar de " onclick".</p>
+                                    </div>
+                                    <!--//content-->
+                                </div>
+                                <p>En este ejemplo, el addEventListener()método le permite agregar muchos eventos al
+                                    mismo
+                                    elemento, sin sobrescribir los eventos existentes:</p>
+
+                                <div class="docs-code-block">
+                                    <pre class="shadow-lg rounded"><code class="javascript hljs">element.addEventListener("mouseover", Funcion1);
+element.addEventListener("click", Funcion2);
+element.addEventListener("mouseout", Funcion3);</code></pre>
+
+                                </div>
+                                <!--//docs-code-block-->
+                                <button class="btn btn-success" type="button" id="listenerbutton">Acercate a ver que
+                                    pasa</button>
+                                <p></p>
+                                <p id="pruebaevent"></p>
+                        </section>
+
+
+                        <section class="docs-section" id="item-1-4">
+                            <h2 class="section-heading">Navegacion DOM</h2>
+                            <p>Con el DOM HTML, puede navegar por el árbol de nodos utilizando el nodo Relaciones.</p>
+                            <h3>Nodos DOM</h3>
+                            <p>De acuerdo con el estándar W3C HTML DOM, todo en un documento HTML es un nodo entonces:
+                            </p>
+                            <ul>
+                                <li>Todo el documento es un nodo de documento</li>
+                                <li>Cada elemento HTML es un nodo de elemento</li>
+                                <li>El texto dentro de los elementos HTML son nodos de texto</li>
+                                <li>Cada atributo HTML es un nodo de atributo (obsoleto)</li>
+                                <li>Todos los comentarios son nodos de comentarios</li>
+                            </ul>
+                            <p>Con el DOM HTML, JavaScript puede acceder a todos los nodos del árbol de nodos y se
+                                pueden crear nuevos nodos, y todos Los nodos se pueden modificar o eliminar.</p>
+
+
+                            <p>En el siguiente ejemplo se recupera el texto de un elemento < h1> y lo copian en un
+                                    elemento
+                                    < p>
+                            </p>
+                            <div class="docs-code-block">
+                                <pre
+                                    class="shadow-lg rounded"><code class="javascript hljs">document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;</code></pre>
+
+                            </div>
+
+                            <div class="card text-center mt-4 mb-4 p-3">
+                                <h1 id="ejnav01">Contenido a copiar</h1>
+                                <p id="ejnav02"></p>
+                            </div>
+
+
+                            <script>
+                                document.getElementById("ejnav02").innerHTML = document.getElementById("ejnav01").innerHTML;
+                            </script>
+
+                            <h3>Nodos raíz DOM</h3>
+                            <p>Hay dos propiedades especiales que permiten el acceso al documento completo: </p>
+                            <ul>
+                                <li>document.body - El cuerpo del documento</li>
+                                <li>document.documentElement - El documento completo
+                                </li>
+                            </ul>
+
+                            <p>Donde se puede crear un contenedor donde se recupera todo el contenido html</p>
+
+
+
+                        </section>
+
+                        <section class="docs-section" id="item-1-5">
+                            <h2 class="section-heading">Nodos DOM</h2>
+
+                            <h2>Creación de nuevos elementos HTML (nodos)</h2>
+                            <p>Para agregar un nuevo elemento al DOM HTML, primero debe crear el elemento (nodo de
+                                elemento), y, a continuación, anexarlo a un elemento existente.</p>
+
+                            <div class="docs-code-block">
+                                <pre class="shadow-lg rounded"><code class="javascript hljs">const elementoparrafo = document.createElement("p");
+const nodo = document.createTextNode("Nuevo nodo creado.");
+para.appendChild(nodo);
+const element = document.getElementById("div1");
+element.appendChild(elementoparrafo);</code></pre>
+
+                            </div>
+
+                            <div class="card text-center mt-4 mb-4 p-3">
+                                <div id="crearnodo">
+                                    <p id="crear1">Primer nodo </p>
+                                    <p id="crear2">Otro nodo</p>
+                                </div>
+
+                                <script>
+                                    const para = document.createElement("p");
+                                    const node = document.createTextNode("Nuevo nodo creado.");
+                                    para.appendChild(node);
+
+                                    const element = document.getElementById("crearnodo");
+                                    element.appendChild(para);
+                                </script>
+                            </div>
+
+                            <h3>Eliminación de elementos HTML existentes</h3>
+                            <p>Para quitar o remover algun elemento HTML(nodo) existe el metodo</p>
+                            <p>remove()</p>
+                            <div class="docs-code-block">
+                                <pre
+                                    class="shadow-lg rounded"><code class="javascript hljs">const elmnt = document.getElementById("Elemento_a_remover").remove();</code></pre>
+
+                                <div>
+                                    <div class="card text-center mt-4 mb-4 p-3">
+                                        <p id="del1">Nodo a eliminar</p>
+                                        <p id="del2">Nodo extra</p>
+                                    </div>
+
+
+
+                                    <button class="btn btn-success btn-sm mb-4" onclick="eliminarNodo()">Remover
+                                        Elemento</button>
+
+
+
+                                </div>
+
+                                <p>En el siguiente ejemplo se unen los conceptos</p>
+
+                                <div class="docs-code-block">
+                                    <pre class="shadow-lg rounded"><code class="javascript hljs">function addParagraph() {
+var container = document.getElementById('container');
+   var inputText = document.getElementById('inputText');
+    var word = inputText.value;
+   if (word.trim() !== '') {
+        var newParagraph = document.createElement('p');
+       newParagraph.innerHTML = word;
+        var deleteButton = document.createElement('button');
+       deleteButton.innerHTML = 'Eliminar';
+       deleteButton.onclick = function() {
+           container.removeChild(newParagraph);
+           container.removeChild(deleteButton);
+       };
+        container.appendChild(newParagraph);
+       container.appendChild(deleteButton);
+        inputText.value = '';
+   }
+}</code></pre>
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Se tienen las opciones de agregar y eliminar</h4>
+                                            <div id="container">
+                                                <input class="form-control mb-4" type="text" id="inputText"
+                                                    placeholder="Ingrese lo que quiera agregar">
+                                                <button class="btn btn-sm btn-success" onclick="addParagraph()">Agregar
+                                                    Párrafo</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                        </section>
+
+                        <section class="docs-section" id="item-1-6">
+                            <h2 class="section-heading">Colecciones DOM</h2>
+
+                            <h3>El objeto HTMLCollection</h3>
+                            <p>El método devuelve un objeto HTMLCollection que es una lista similar a una matriz
+                                (colección)
+                                de elementos HTML </p>
+                            <p>El código siguiente se puede seleccionar todos los elementos ya sean < p> u otros, de un
+                                    documento</p>
+                            <div class="docs-code-block">
+                                <pre
+                                    class="shadow-lg rounded"><code class="javascript hljs">const myCollection = document.getElementsByTagName("p");</code></pre>
+                                <p>Y se pude acceder a los elementos de la colección mediante un número de índice </p>
+                                <div class="docs-code-block">
+                                    <pre
+                                        class="shadow-lg rounded"><code class="javascript hljs">myCollection[1]</code></pre>
+
+                                    <div class="card text-center mt-4 mb-4 p-3">
+                                        <p>Al presionar el botón se aplicará un estilo css a la colección de párrafos de
+                                            todo el documento</p>
+                                    </div>
+
+
+                                    <button class="btn btn-success" onclick="coleccion()">Cambia el estilo</button>
+                                    <button class="btn btn-info" onclick="remove()">Revertir estilo</button>
+
+
+
+                        </section>
+
+
+
+
+                        <section class="docs-section" id="item-1-7">
+                            <h2 class="section-heading">Lista de Nodos DOM</h2>
+
+                            <p>Un NodeListobjeto es una lista (colección) de nodos extraídos de un documento.</p>
+                            <p>Un NodeListobjeto es casi lo mismo que un HTMLCollectionobjeto.</p>
+                            <p>Algunos navegadores (más antiguos) devuelven un objeto NodeList en lugar de
+                                HTMLCollection
+                                para métodos como getElementsByClassName().</p>
+                            <p>Todos los navegadores devuelven un objeto NodeList para la propiedad childNodes.</p>
+                            <p>La mayoría de los navegadores devuelven un objeto NodeList para el método
+                                querySelectorAll().
+                            </p>
+                            <p></p>
+
+                            <p>En este ejemplo, La lengthpropiedad define el número de nodos en una lista de nodos:</p>
+
+                            <div class="docs-code-block">
+                                <pre
+                                    class="shadow-lg rounded"><code class="javascript hljs">myNodelist.length</code></pre>
+
+                            </div>
+                            <!--//docs-code-block-->
+
+                            <button class="btn btn-success" type="button" id="nodelistboton">Pruebame</button>
+                            <p></p>
+                            <p id="listan"></p>
+                        </section>
+
+                        <!-- footer -->
+                        <footer class="footer">
+                            <div class="container text-center py-5">
+                                <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+                                <small class="copyright">Template diseñado por <a class="theme-link"
+                                        href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying
+                                        Riley.</a></small>
+                                <ul class="social-list list-unstyled pt-4 mb-0">
+                                    <li class="list-inline-item"><a href="https://www.facebook.com/ESPE.U/?locale=es_LA"
+                                            target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+                                    <li class="list-inline-item"><a
+                                            href="https://twitter.com/ESPEU?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                                            target="_blank"><i class="fab fa-twitter fa-fw"></i></a></li>
+                                    <li class="list-inline-item"><a href="https://www.instagram.com/espe.u/?hl=es"
+                                            target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
+                                </ul>
+                                <!--//social-list-->
+                            </div>
+                        </footer>
+            </div>
+        </div>
+    </div>
+    <!--//docs-wrapper-->
+
+
+    <!-- Javascript -->
+    <script src="../assets/plugins/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <!-- Page Specific JS -->
+    <script src="../assets/plugins/smoothscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="../assets/js/highlight-custom.js"></script>
+    <script src="../assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
+    <script src="../assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+    <script src="../assets/js/docs.js"></script>
+    <script src="../assets/plugins/codigo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <!-- SCROOLL REVEAL SCRIPT -->
+    <script>
+        window.sr = ScrollReveal();
+
+        sr.reveal('#item-1-1', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+
+        sr.reveal('#item-1-2', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+        sr.reveal('#item-1-3', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+
+        sr.reveal('#item-1-4', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+        sr.reveal('#item-1-5', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+
+        sr.reveal('#item-1-6', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+        sr.reveal('#item-1-7', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '300px'
+        });
+
+        sr.reveal('.docs-header', {
+            duration: 2000,
+            origin: 'top',
+            distance: '300px'
+        });
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById("myBtn1").onclick = displayDate;
+
+        var x = document.getElementById("listenerbutton");
+        x.addEventListener("mouseover", Funcion1);
+        x.addEventListener("click", Funcion2);
+        x.addEventListener("mouseout", Funcion3);
+
+        const myNodelist = document.querySelectorAll("div");
+
+        document.getElementById("nodelistboton").onclick = Listanodos;
+
+    </script>
+</body>
+
+</html>
